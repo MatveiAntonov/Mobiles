@@ -1,0 +1,102 @@
+[
+  {
+    "id": 0,
+    "name": "Mom",
+    "imagePath": "assets/persons/mum.png",
+    "coordinates":
+    {
+      "latitude": -1.272758,
+      "longitude": 36.827899
+    }
+  },
+  {
+    "id": 1,
+    "name": "Dad",
+    "imagePath": "assets/persons/dad.png",
+    "coordinates":
+    {
+      "latitude": 51.507351,
+      "longitude": -0.127696
+    }
+  },
+  {
+    "id": 2,
+    "name": "Brother",
+    "imagePath": "assets/persons/brother.png",
+    "coordinates":
+    {
+      "latitude": 53.902284,
+      "longitude": 27.561831
+    }
+  },
+  {
+    "id": 3,
+    "name": "Mike",
+    "imagePath": "assets/persons/mike.png",
+    "coordinates":
+    {
+      "latitude": 50.450441,
+      "longitude": 30.523550
+    }
+  },
+  {
+    "id": 4,
+    "name": "Darn",
+    "imagePath": "assets/persons/darn.png",
+    "coordinates":
+    {
+      "latitude": 54.689388,
+      "longitude": 25.270894
+    }
+  },
+  {
+    "id": 5,
+    "name": "Nina",
+    "imagePath": "assets/persons/nina.png",
+    "coordinates":
+    {
+      "latitude": 48.856663,
+      "longitude": 2.351556
+    }
+  },
+  {
+    "id": 6,
+    "name": "Aunt",
+    "imagePath": "assets/persons/aunt.png",
+    "coordinates":
+    {
+      "latitude": 35.681729,
+      "longitude": 139.753927
+    }
+  },
+  {
+    "id": 7,
+    "name": "Uncle",
+    "imagePath": "assets/persons/default.png",
+    "coordinates":
+    {
+      "latitude": 45.401409,
+      "longitude": -75.700077
+    }
+  },
+  {
+    "id": 8,
+    "name": "Tobi",
+    "imagePath": "assets/persons/tobi.png",
+    "coordinates":
+    {
+      "latitude": 59.912756,
+      "longitude": 10.734374
+    }
+  },
+  {
+    "id": 9,
+    "name": "Sister",
+    "imagePath": "assets/persons/sister.png",
+    "coordinates":
+    {
+      "latitude": 59.325005,
+      "longitude": 18.070897
+    }
+  }
+]
