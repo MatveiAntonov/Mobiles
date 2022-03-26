@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:lab1/pages/ListPage.dart';
 import 'package:lab1/models/person.dart';
 import 'dart:convert';
 import 'dart:async' show Future;
@@ -8,6 +8,7 @@ import 'package:lab1/models/weather.dart';
 class Persons {
 
   static List<Person> personsList = [];
+  static List<Person> filteredPersons = [];
 
   static Future<List<Person>> getPersons() async {
     final String response = await rootBundle.loadString('assets/store.json');
@@ -19,19 +20,21 @@ class Persons {
 
     for (int i = 0; i < jsonData.length; i++) {
       coordinate = Coordinate(jsonData[i]["coordinates"]["latitude"], jsonData[i]["coordinates"]["longitude"]);
-      weather = await Weather.getWeather(coordinate.latitude.toString(), coordinate.longitude.toString());
-      Person person = Person(jsonData[i]["id"], jsonData[i]["name"], jsonData[i]["imagePath"], coordinate, 20);
+      Person person = Person(jsonData[i]["id"], jsonData[i]["name"], jsonData[i]["imagePath"], coordinate, 0);
       personsList.add(person);
     }
 
-    /*for (var p in jsonData){
-      coordinate = Coordinate(p["coordinates"]["latitude"], p["coordinates"]["longitude"]);
-      weather = await Weather.getWeather(coordinate.latitude.toString(), coordinate.longitude.toString());
-      Person person = Person(p["id"], p["name"], p["imagePath"], coordinate, weather);
-      personsList.add(person);
-    }*/
+    for (var p in personsList)  {
+      p.weather = await Weather.getWeather(p.coordinates.latitude.toString(), p.coordinates.longitude.toString());
+    }
+
+    if (filteredPersons.isEmpty) {
+      filteredPersons = personsList;
+    }
     return personsList;
   }
-
-
 }
+
+// void setWeather(Person p) async{
+//   p.weather = await Weather.getWeather(p.coordinates.latitude.toString(), p.coordinates.longitude.toString());
+// }

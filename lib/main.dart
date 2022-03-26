@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lab1/pages/ListPage.dart';
 import 'package:lab1/pages/MapPage.dart';
+import 'package:lab1/models/persons.dart';
 import 'package:lab1/pages/SettingsPage.dart';
 import 'package:lab1/models/settings.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 void main() => runApp(MaterialApp(
-  home: const Main(page: 0,),
+  home: const Main(page: 0),
   debugShowCheckedModeBanner: false,
   theme: ThemeData(
       primarySwatch: Colors.red,
@@ -16,6 +17,7 @@ void main() => runApp(MaterialApp(
 
 class Main extends StatefulWidget {
   final int page;
+
   const Main({Key? key, required this.page}) : super(key: key);
   @override
   State<Main> createState() => _MainState();

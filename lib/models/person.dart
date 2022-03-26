@@ -1,11 +1,13 @@
 import 'package:meta/meta.dart';
 
+int currentPerson = 0;
+
 class Person {
   final int id;
   final String name;
   final String imagePath;
   final Coordinate coordinates;
-  final double weather;
+  double weather;
 
   Person(this.id, this.name, this.imagePath, this.coordinates, this.weather);
 }
