@@ -3,6 +3,7 @@ import 'package:lab1/main.dart';
 import 'package:lab1/models/persons.dart';
 import 'package:lab1/models/settings.dart';
 import 'package:lab1/models/person.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class ListPage extends StatefulWidget {
@@ -62,8 +63,8 @@ class _ListPageState extends State<ListPage> {
                         borderSide: BorderSide(color: Settings.fontColor, width: 3)
                       ),
                       contentPadding: const EdgeInsets.symmetric(horizontal: 15),
-                      labelText: 'Search',
-                      hintText: 'Some person...',
+                      labelText: AppLocalizations.of(context)!.search,
+                      hintText: AppLocalizations.of(context)!.find,
                     ),
                   ),
                 ),
@@ -91,7 +92,7 @@ class _ListPageState extends State<ListPage> {
                                           child: Text(
                                             Persons.filteredPersons[index].name,
                                             style: TextStyle(
-                                                fontSize: 25 * Settings.fontCoef,
+                                                fontSize: 26 * Settings.fontCoef,
                                                 color: Settings.fontColor,
                                                 fontWeight: FontWeight.w500
                                             ),
@@ -106,7 +107,7 @@ class _ListPageState extends State<ListPage> {
                                           child: Text(
                                             Persons.filteredPersons[index].coordinates.latitude.toString() + ', ' + snapshot.data[index].coordinates.longitude.toString(),
                                             style: TextStyle(
-                                                fontSize: 18 * Settings.fontCoef,
+                                                fontSize: 15 * Settings.fontCoef,
                                                 color: Settings.fontColor
                                             ),
                                           ),
@@ -125,7 +126,7 @@ class _ListPageState extends State<ListPage> {
                                           child: CircleAvatar(
                                             backgroundImage: AssetImage(Persons.filteredPersons[index].imagePath),
                                             backgroundColor: Colors.transparent,
-                                            radius: 27 / Settings.fontCoef,
+                                            radius: 28 / Settings.fontCoef,
                                           ),
                                         )
                                       ],
@@ -137,7 +138,7 @@ class _ListPageState extends State<ListPage> {
                                             child: Text(
                                               Persons.filteredPersons[index].weather.toString() + '℃',
                                               style: TextStyle(
-                                                  fontSize: 30 * Settings.fontCoef,
+                                                  fontSize: 28 * Settings.fontCoef,
                                                   color: Settings.fontColor
                                               ),
                                             )

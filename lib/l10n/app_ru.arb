@@ -1,0 +1,11 @@
+{
+    "language": "Russian",
+    "fontColor": "Цвет шрифта:",
+    "fontSize": "Размер шрифта:",
+    "changeColor": "Изменить цвет",
+    "yourWeather": "Ваша Погода",
+    "find": "Введите название...",
+    "select": "ВЫБРАТЬ",
+    "pickColor": "Выберите цвет",
+    "search": "Поиск"
+}

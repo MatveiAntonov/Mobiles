@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692681816996",
+    "project_id": "your-weather-f88ac",
+    "storage_bucket": "your-weather-f88ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692681816996:android:ee72abd26507fa936e1f31",
+        "android_client_info": {
+          "package_name": "com.example.lab1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692681816996-9m4fefiqvbou1075e2q566otq0k4k5d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpFjYXSQA-vgX1LAX48mZZF3QuiullM0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692681816996-9m4fefiqvbou1075e2q566otq0k4k5d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

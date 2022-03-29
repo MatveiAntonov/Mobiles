@@ -4,6 +4,7 @@ import 'package:lab1/models/settings.dart';
 import 'package:lab1/models/persons.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:lab1/models/markers.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({Key? key}) : super(key: key);
@@ -78,8 +79,8 @@ class _MapPageState extends State<MapPage> {
                     borderSide: BorderSide(color: Settings.fontColor, width: 3)
                 ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 15),
-                labelText: 'Search',
-                hintText: 'Some person...',
+                labelText: AppLocalizations.of(context)!.search,
+                hintText: AppLocalizations.of(context)!.find,
               ),
             ),
           ),
@@ -101,7 +102,8 @@ class _MapPageState extends State<MapPage> {
                     setState(() {
                       items.clear();
                       inputController.clear();
-                    })
+                    }),
+                    FocusScope.of(context).unfocus()
                   },
                   child: ListTile(
                     title: Text(

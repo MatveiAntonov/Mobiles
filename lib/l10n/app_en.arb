@@ -1,0 +1,38 @@
+{
+    "language": "English",
+    "@language":{
+        "description": "The current Language"
+    },
+    "fontColor": "Font color:",
+    "@fontColor": {
+        "description": "Specifies the font color"
+    },
+    "fontSize": "Font size:",
+    "@fontSize": {
+        "description": "Specifies the font size"
+    },
+    "changeColor": "Change color",
+    "@changeColor": {
+        "description": "Change color"
+    },
+    "yourWeather": "Your Weather",
+    "@yourWeather": {
+        "description": "Inscription"
+    },
+    "find": "Enter the title...",
+    "@find": {
+        "description": "Find hint"
+    },
+    "select": "SELECT",
+    "@select": {
+        "description": "Select"
+    },
+    "pickColor": "Pick color",
+    "@pickColor": {
+        "description": "Pick color"
+    },
+    "search": "Search",
+    "@search": {
+        "description": "Search"
+    }
+}

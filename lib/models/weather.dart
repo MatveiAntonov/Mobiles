@@ -10,7 +10,7 @@ class Weather {
     final uri = Uri.https('api.openweathermap.org', '/data/2.5/weather', queryParameters);
     final response = await http.get(uri);
     final jsonData = json.decode(response.body);
-    degr = jsonData["main"]["temp"];
+    degr = jsonData["main"]["temp"].toDouble();
     return degr;
   }
 }

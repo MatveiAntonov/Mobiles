@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:lab1/models/settings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  final listItems = ['x1', 'x1.25', 'x1.5'];
+  final listItems = ['x1', 'x1.2', 'x1.4'];
 
   @override
   Widget build(BuildContext context) {
@@ -26,35 +27,34 @@ class _SettingsPageState extends State<SettingsPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Font size: ',
+                        AppLocalizations.of(context)!.fontSize,
                         style: TextStyle(
-                            fontSize: 27 * Settings.fontCoef,
+                            fontSize: 26 * Settings.fontCoef,
                             color: Settings.fontColor
                         ),
                       ),
-                      Container(
-                          width: 130 * Settings.fontCoef,
-                          margin: const EdgeInsets.only(left: 30),
-                          padding: const EdgeInsets.symmetric(horizontal: 22),
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white, width: 3),
-                              borderRadius: BorderRadius.circular(12)
-                          ),
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton<String>(
-                              value: Settings.listItem,
-                              isExpanded: true,
-                              iconSize: 36,
-                              icon: const Icon(Icons.keyboard_arrow_down, color: Colors.black,),
-                              items: listItems.map(buildMenuItem).toList(),
-                              onChanged: (value) => {
-                                Settings.setFontCoef(value),
-                                setState(() => Settings.listItem = value)
-                              },
-                            ),
-                          )
-                      ),
                     ]
+                ),
+                Container(
+                    width: 130 * Settings.fontCoef,
+                    margin: const EdgeInsets.only(top: 10),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white, width: 3),
+                        borderRadius: BorderRadius.circular(12)
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: Settings.listItem,
+                        isExpanded: true,
+                        iconSize: 36,
+                        icon: const Icon(Icons.keyboard_arrow_down, color: Colors.black,),
+                        items: listItems.map(buildMenuItem).toList(),
+                        onChanged: (value) => {
+                          Settings.setFontCoef(value),
+                          setState(() => Settings.listItem = value)
+                        },
+                      ),
+                    )
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
@@ -62,9 +62,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        'Font Color: ',
+                        AppLocalizations.of(context)!.fontColor,
                         style: TextStyle(
-                            fontSize: 27 * Settings.fontCoef,
+                            fontSize: 26 * Settings.fontCoef,
                             color: Settings.fontColor
                         ),
                       ),
@@ -80,22 +80,19 @@ class _SettingsPageState extends State<SettingsPage> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 10),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 10)
-                    ),
-                    onPressed: () => pickColor(context),
-                    child: Text(
-                        'Change color',
-                        style: TextStyle(
-                            fontSize: 23 * Settings.fontCoef,
-                            color: Colors.black
-                        )
-                    ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // padding: const EdgeInsets.symmetric(horizontal: 10)
                   ),
-                )
+                  onPressed: () => pickColor(context),
+                  child: Text(
+                      AppLocalizations.of(context)!.changeColor,
+                      style: TextStyle(
+                          fontSize: 23 * Settings.fontCoef,
+                          color: Settings.fontColor
+                      )
+                  ),
+                ),
               ],
             )
           ],
@@ -126,11 +123,13 @@ class _SettingsPageState extends State<SettingsPage> {
       onColorChanged: (color) => setState(() => Settings.fontColor = color)
   );
 
+
+
   void pickColor(BuildContext context) => showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          'Pick Your Color',
+          AppLocalizations.of(context)!.pickColor,
           style: TextStyle(
             color: Settings.fontColor
           ),
@@ -143,9 +142,9 @@ class _SettingsPageState extends State<SettingsPage> {
               onPressed: () => {
                 Navigator.of(context).pop(),
               },
-              child: const Text(
-                'SELECT',
-                style: TextStyle(
+              child: Text(
+                AppLocalizations.of(context)!.select,
+                style: const TextStyle(
                     fontSize: 23,
                     color: Colors.blue
                 ),

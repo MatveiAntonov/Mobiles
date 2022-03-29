@@ -11,12 +11,12 @@ class Settings {
         fontCoef = 1;
         break;
 
-      case 'x1.25':
-        fontCoef = 1.25;
+      case 'x1.2':
+        fontCoef = 1.2;
         break;
 
-      case 'x1.5':
-        fontCoef = 1.5;
+      case 'x1.4':
+        fontCoef = 1.4;
         break;
     }
   }
